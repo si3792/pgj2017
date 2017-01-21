@@ -34,6 +34,7 @@ public class PlanetController_new : MonoBehaviour {
 
 	void FixedUpdate () {
 
+		if(sun != null) 
 		rotateAroundSun ();
 	}
 		
