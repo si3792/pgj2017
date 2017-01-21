@@ -10,8 +10,10 @@ public class Engine : MonoBehaviour, IObjectDamage {
     public float speedMultiplier = 1.0f;
     private Rigidbody2D rb;
 
-	// Use this for initialization
-	void Start () {
+    public bool active = true;
+
+    // Use this for initialization
+    void Start () {
         rb = transform.parent.GetComponent<Rigidbody2D>();
 	}
     
@@ -31,7 +33,7 @@ public class Engine : MonoBehaviour, IObjectDamage {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-        if (health <= 0) {
+        if ((health == 0) || (!active)) {
             return;
         }
 
