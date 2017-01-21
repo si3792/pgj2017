@@ -10,13 +10,13 @@ public class PlanetBase : MonoBehaviour {
 	private PlayerMovement playerMovement;
 
 	void Start () {
-		playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>;
+		playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 		playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
 	}
 
 	void Update () {
 
-		float distance = Vector3.Distance(pos, transform.position);
+		float distance = Vector3.Distance(playerTransform.position, transform.position);
 		if(distance < GlobalData.gravityCutoffDistance) {
 			playerMovement.ApplyGravity(transform.position, size * density);
 		}

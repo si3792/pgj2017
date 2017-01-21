@@ -24,6 +24,6 @@ public class Gravity : MonoBehaviour {
 
     // Update is called once per frame
     void FixedUpdate () {
-		plrMovement.ApplyGravity(transform.position, size * density, 1.0f);
+		plrMovement.ApplyGravity(transform.position, size * density);
 	}
 }
