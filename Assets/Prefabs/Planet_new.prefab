@@ -22,7 +22,8 @@ GameObject:
   - component: {fileID: 212985234926147324}
   - component: {fileID: 114004301326149438}
   - component: {fileID: 114206482369223410}
-  - component: {fileID: 58151522989744726}
+  - component: {fileID: 58969381766756504}
+  - component: {fileID: 114716477407815564}
   m_Layer: 0
   m_Name: Planet_new
   m_TagString: Rotatable
@@ -37,13 +38,13 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1690783234812546}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -25.3, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &58151522989744726
+--- !u!58 &58969381766756504
 CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -56,7 +57,7 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 4.515
+  m_Radius: 5.49
 --- !u!114 &114004301326149438
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -83,6 +84,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   size: 1
   density: 10
+--- !u!114 &114716477407815564
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1690783234812546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af23a422394274f599be077d92705bb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.3
 --- !u!212 &212985234926147324
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -114,7 +127,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1903aafffdcc89d438d37ab7775ca0b4, type: 3}
-  m_Color: {r: 0.61379313, g: 1, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 413091ff97014420bb9490ee963fbfb3, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

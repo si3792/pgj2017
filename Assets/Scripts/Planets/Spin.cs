@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[AddComponentMenu("Scripts/Planets/Rotation")]
-public class simpleRotate : MonoBehaviour {
+[AddComponentMenu("Scripts/Planets/Spin")]
+public class Spin : MonoBehaviour {
 
-	public float speed = 1.0f;
+	public float speed = 0.1f;
 	// Use this for initialization
 	void Start () {
 		
