@@ -52,6 +52,7 @@ public class Engine : MonoBehaviour, IObjectDamage {
     }
 
     public void doDeath(GameObject inflictor) {
+        gameObject.SetActive(false);
         // DO STUFF HERE
     }
 }

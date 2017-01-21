@@ -5,12 +5,8 @@ using UnityEngine;
 [AddComponentMenu("Scripts/Ship/Turret")]
 public class Turret : MonoBehaviour, IObjectDamage {
 
-    int health = 500;
-    public int HP {
-        get {
-            return health;
-        }
-    }
+    public int health = 500;
+    
 
     int maxHealth = 500;
 
@@ -65,6 +61,7 @@ public class Turret : MonoBehaviour, IObjectDamage {
     }
 
     public void doDeath (GameObject inflictor) {
+        gameObject.SetActive(false);
         // ANIMATIONS!!!
     }
 }
