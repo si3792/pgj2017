@@ -48,8 +48,7 @@ class PlanetSpawner : MonoBehaviour{
             GameObject temp = Instantiate(planetPrefab);
 
             float size = UnityEngine.Random.Range(1.0f, 3.0f);
-            // TODO: Set density
-            // WIP
+
             Gravity tempGravity = temp.GetComponentInChildren<Gravity>();
             tempGravity.size = size;
 
@@ -60,7 +59,7 @@ class PlanetSpawner : MonoBehaviour{
 
             UnityEngine.Random.InitState(DateTime.Now.Millisecond);
 
-            float orbitRadius = UnityEngine.Random.Range(size * 4.5f + 10, size * 4.5f * UnityEngine.Random.Range(2.0f, 6.0f));
+            float orbitRadius = UnityEngine.Random.Range(size * 4.5f * 2, size * 4.5f * UnityEngine.Random.Range(4.0f, 10.0f));
 
             temp.transform.position = new Vector3(  distanceToCenter + orbitRadius,
                                                     distanceToCenter + orbitRadius,
@@ -68,6 +67,8 @@ class PlanetSpawner : MonoBehaviour{
 
             distanceToCenter = Vector3.Distance(temp.transform.position, center);
 
+            Debug.Log(orbitRadius);
+            Debug.Log(distanceToCenter);
             /*temp.transform.position = new Vector3(  UnityEngine.Random.Range(center.x - maxUnits, center.x + maxUnits),
                                                     UnityEngine.Random.Range(center.y - maxUnits, center.y + maxUnits),
                                                     0   );*/
