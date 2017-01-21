@@ -8,9 +8,14 @@ public class PlayerMovement : MonoBehaviour {
     public float speedMultiplier = 1.0f;
 
     public void ApplyGravity(Vector3 pos, float size) {
-        float distance = Vector2.Distance(pos, transform.position);
+        float distance = Vector3.Distance(pos, transform.position);
+        Debug.Log(distance);
 
-        rb.AddForce((pos - transform.position) * distance)  ;
+        if (distance <= 1) {
+            distance = 1;
+        }
+
+        rb.AddForce((pos - transform.position).normalized / distance );
     }
 
     // Use this for initialization
