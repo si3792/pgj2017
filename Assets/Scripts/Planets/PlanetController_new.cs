@@ -5,7 +5,7 @@ using UnityEngine;
 [AddComponentMenu("Scripts/Planets/Planet controller new")]
 public class PlanetController_new : MonoBehaviour {
 
-	public float rotationSpeed = 5f;
+	public float rotationSpeed = 0.1f;
 	public bool rotateClockwise = true;
 	private GameObject sun; // The object we rotate around
 	private Rigidbody2D rb;
@@ -22,8 +22,8 @@ public class PlanetController_new : MonoBehaviour {
 			Time.deltaTime * rotationSpeed);
 		*/
 
-        float sine = Mathf.Sin( ((rotateClockwise)? -1 : 1) * rotationSpeed * 0.1f);
-        float cosine = Mathf.Cos(((rotateClockwise) ? -1 : 1) * rotationSpeed * 0.1f);
+		float sine = Mathf.Sin( ((rotateClockwise)? -1 : 1) * rotationSpeed * GlobalData.rotationFactor);
+		float cosine = Mathf.Cos(((rotateClockwise) ? -1 : 1) * rotationSpeed * GlobalData.rotationFactor);
 
         Vector2 temp = new Vector2(transform.position.x - sun.transform.position.x, transform.position.y - sun.transform.position.y);
 
