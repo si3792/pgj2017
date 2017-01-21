@@ -4,6 +4,9 @@ using UnityEngine;
 
 [AddComponentMenu("Scripts/Ship/Turret")]
 public class Turret : MonoBehaviour, IObjectDamage {
+    // TODO: Rotation (arch)
+    // TODO: Mirror rotation (flag)
+
     int health = 500;
     public int HP {
         get {
