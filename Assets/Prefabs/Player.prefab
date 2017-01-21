@@ -88,7 +88,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4843317691198076}
   - component: {fileID: 114416431010828362}
-  - component: {fileID: 50658111900476608}
   - component: {fileID: 212134100069306288}
   m_Layer: 0
   m_Name: Projectile
@@ -166,26 +165,6 @@ Transform:
   m_Father: {fileID: 4115442841952922}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50658111900476608
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1779994154767722}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!50 &50834456739552938
 Rigidbody2D:
   serializedVersion: 4
@@ -231,6 +210,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41df870661bc75746a80a3e356d88330, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 500
   projPrefab: {fileID: 1773896211831094, guid: 5cddba73764239e40a3806d5007d5079, type: 2}
   active: 1
   fireCooldown: 0.5
@@ -249,11 +229,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c499c704f8d0cce4cafe93494759dc06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 50658111900476608}
+  rb: {fileID: 0}
   damage: 10
-  speed: 1
-  direction: {x: 0, y: 0}
   timeOut: 10
+  velocity: {x: 0, y: 0}
 --- !u!114 &114540647055967878
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -269,6 +248,7 @@ MonoBehaviour:
   health: 500
   rotationMultiplier: 0.1
   speedMultiplier: 1
+  boostMultiplier: 5.5
   active: 1
 --- !u!114 &114878508338853804
 MonoBehaviour:

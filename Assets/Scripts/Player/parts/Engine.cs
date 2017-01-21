@@ -4,8 +4,8 @@ using UnityEngine;
 
 [AddComponentMenu("Scripts/Ship/Engine")]
 public class Engine : MonoBehaviour, IObjectDamage {
-    public int maxHealth = 500;
-    public int health = 500;
+    public float maxHealth = 500;
+    public float health = 500;
     public float rotationMultiplier = 0.1f;
     public float speedMultiplier = 1.0f;
     public float boostMultiplier = 5.5f;

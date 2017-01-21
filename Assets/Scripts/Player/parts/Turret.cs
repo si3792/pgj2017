@@ -5,7 +5,7 @@ using UnityEngine;
 [AddComponentMenu("Scripts/Ship/Turret")]
 public class Turret : MonoBehaviour, IObjectDamage {
 
-    public int health = 500;
+    public float health = 500;
     
 
     int maxHealth = 500;
