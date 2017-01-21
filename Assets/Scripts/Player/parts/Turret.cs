@@ -4,8 +4,6 @@ using UnityEngine;
 
 [AddComponentMenu("Scripts/Ship/Turret")]
 public class Turret : MonoBehaviour, IObjectDamage {
-    // TODO: Rotation (arch)
-    // TODO: Mirror rotation (flag)
 
     int health = 500;
     public int HP {
@@ -20,6 +18,7 @@ public class Turret : MonoBehaviour, IObjectDamage {
 
     public GameObject projPrefab;
 
+    public bool active = true;
     public float fireCooldown = 0.5f;
     public int damage = 10;
     public float speed = 1.0f;
@@ -36,15 +35,16 @@ public class Turret : MonoBehaviour, IObjectDamage {
         GameObject obj = Instantiate(projPrefab);
 
         obj.transform.position = transform.TransformPoint(new Vector3(-0.05f, 0.28f, 0f));
+        obj.transform.rotation = transform.rotation;
 
         Projectile projectile = obj.GetComponent<Projectile>();
-        projectile.direction = transform.forward;
+        obj.GetComponent<Rigidbody2D>().AddForce(Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z + 90) * new Vector2(200 * speed, 0));
         // TODO: Transfer stats
     }
 
 	// Update is called once per frame
 	void Update () {
-        if (health == 0) {
+        if ((health == 0) || (!active)) {
             return;
         }
 
