@@ -22,8 +22,8 @@ public class PlanetController_new : MonoBehaviour {
 			Time.deltaTime * rotationSpeed);
 		*/
 
-        float sine = Mathf.Sin(rotationSpeed * 0.1f);
-        float cosine = Mathf.Cos(rotationSpeed * 0.1f);
+        float sine = Mathf.Sin( ((rotateClockwise)? -1 : 1) * rotationSpeed * 0.1f);
+        float cosine = Mathf.Cos(((rotateClockwise) ? -1 : 1) * rotationSpeed * 0.1f);
 
         Vector2 temp = new Vector2(transform.position.x - sun.transform.position.x, transform.position.y - sun.transform.position.y);
 
