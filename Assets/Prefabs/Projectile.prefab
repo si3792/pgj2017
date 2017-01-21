@@ -19,9 +19,10 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4690597625769508}
-  - component: {fileID: 114463552680854058}
   - component: {fileID: 50584822859963580}
+  - component: {fileID: 114463552680854058}
   - component: {fileID: 212337863085673830}
+  - component: {fileID: 61422477839020796}
   m_Layer: 0
   m_Name: Projectile
   m_TagString: Untagged
@@ -62,6 +63,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!61 &61422477839020796
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1773896211831094}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 0.11, y: 0.3}
 --- !u!114 &114463552680854058
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -75,9 +90,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 50584822859963580}
   damage: 10
-  speed: 100
-  direction: {x: 0, y: 0}
   timeOut: 10
+  velocity: {x: 0, y: 0}
 --- !u!212 &212337863085673830
 SpriteRenderer:
   m_ObjectHideFlags: 1

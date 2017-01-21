@@ -6,10 +6,16 @@ using UnityEngine.UI;
 [AddComponentMenu("Scripts/Player/Mini map")]
 public class CameraController : MonoBehaviour {
     public GameObject renderPanel;
-    public Camera mapCamera;
+    Camera mapCamera;
+    public Camera mainCamera;
+    public RenderTexture tex;
 
 	// Use this for initialization
 	void Start () {
+        mapCamera = GetComponent<Camera>();
+        Camera.SetupCurrent(mainCamera);
+        tex.width = Screen.width / 10;
+        tex.height = Screen.height / 10;
         Image img = renderPanel.GetComponent<Image>();
         mapCamera.targetTexture = (RenderTexture) img.mainTexture;
 	}

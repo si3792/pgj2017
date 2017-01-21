@@ -8,7 +8,10 @@ public class Engine : MonoBehaviour, IObjectDamage {
     public int health = 500;
     public float rotationMultiplier = 0.1f;
     public float speedMultiplier = 1.0f;
+    public float boostMultiplier = 5.5f;
     private Rigidbody2D rb;
+    //public float boostCooldown = 3.0f;
+    private float nextBoost = 0.0f;
 
     public bool active = true;
 
@@ -31,16 +34,20 @@ public class Engine : MonoBehaviour, IObjectDamage {
         }
     }
 	
+    void boost() {
+        rb.AddForce(Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z) * new Vector2(0, Input.GetAxis("Vertical") * speedMultiplier * boostMultiplier), ForceMode2D.Force);
+    }
+
 	// Update is called once per frame
 	void FixedUpdate () {
         if ((health == 0) || (!active)) {
             return;
         }
 
-        rb.AddTorque(Input.GetAxis("Horizontal") * rotationMultiplier * -1);
+        rb.AddTorque(Input.GetAxis("Horizontal") * rotationMultiplier * -1 * ((Input.GetButton("Jump") ? 0.5f : 1f)));
 
         // Controls 
-        rb.AddForce(Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z) * new Vector2(0, Input.GetAxis("Vertical") * speedMultiplier), ForceMode2D.Force);
+        rb.AddForce(Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z) * new Vector2(0, Input.GetAxis("Vertical") * speedMultiplier * ((Input.GetButton("Jump") ? boostMultiplier : 1f))), ForceMode2D.Force);
     }
 
     public void takeDamage(GameObject inflictor, int damage) {
