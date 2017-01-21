@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[AddComponentMenu("Scripts/Player/Movement script")]
 public class PlayerMovement : MonoBehaviour {
 	public Rigidbody2D rb;
 	public float rotationMultiplier = 0.1f;
@@ -9,16 +10,15 @@ public class PlayerMovement : MonoBehaviour {
 
 	public void ApplyGravity(Vector3 pos, float size, float planetSize) {
 		float distance = Vector3.Distance(pos, transform.position);
-		Debug.Log(distance);
-
+        
 		if (distance <= 1) {
 			distance = 1;
 		}
+        
+		// Increase gravity when nearby - doesn't work for whatever reason
+		if(distance < 10 * planetSize) distance *= 100;
 
-		// Increase gravity when nearby
-		if(distance < 10 * planetSize) size *= 3;
-
-		rb.AddForce((pos - transform.position).normalized * size / distance );
+        rb.AddForce((pos - transform.position).normalized * size / distance );
 	}
 
 	// Use this for initialization

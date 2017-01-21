@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[AddComponentMenu("Scripts/Player/Camera Movement")]
 public class FollowTarget : MonoBehaviour {
 
 	public float interpVelocity;

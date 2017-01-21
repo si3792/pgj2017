@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[AddComponentMenu("Scripts/Planets/Rotation")]
 public class simpleRotate : MonoBehaviour {
 
 	public float speed = 1.0f;
