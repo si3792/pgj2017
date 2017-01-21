@@ -5,15 +5,18 @@ using UnityEngine;
 [AddComponentMenu("Scripts/Upgrades/Health upgrade")]
 public class HealthUpgrade : MonoBehaviour, IUpgrade {
     public GameObject player;
-    public int level = 1;
+    public int level = 0;
     public int maxLevel = 3;
+    public List<GameObject> upgradeLists;
 
     public void execute() {
         if (level + 1 > maxLevel) {
             return;
         }
 
+        upgradeLists[level].SetActive(false);
         level++;
+        upgradeLists[level].SetActive(true);
         // REDO THIS SHIT
     }
 

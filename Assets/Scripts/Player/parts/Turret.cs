@@ -7,7 +7,6 @@ public class Turret : MonoBehaviour, IObjectDamage {
 
     public float health = 500;
     
-
     int maxHealth = 500;
 
     float nextFire = 0.0f;
@@ -21,6 +20,7 @@ public class Turret : MonoBehaviour, IObjectDamage {
     public float speed = 1.0f;
     public Vector2 direction = Vector2.zero;
     public float timeOut = 10.0f;
+    public bool left = false;
     float destroyTimer = 0.0f;
 
     // Use this for initialization
@@ -45,11 +45,22 @@ public class Turret : MonoBehaviour, IObjectDamage {
             return;
         }
 
-        if (Input.GetButton("Fire1")) {
+        if (Input.GetButton("Fire1") && (left)) {
             if (nextFire <= Time.time) {
                 fireProjectiles();
                 nextFire = Time.time + fireCooldown;
+                return;
             }
+            return;
+        }
+
+        if (Input.GetButton("Fire2") && (!left)) {
+            if (nextFire <= Time.time) {
+                fireProjectiles();
+                nextFire = Time.time + fireCooldown;
+                return;
+            }
+            return;
         }
 	}
 

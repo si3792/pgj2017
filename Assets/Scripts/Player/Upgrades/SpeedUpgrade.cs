@@ -5,16 +5,18 @@ using UnityEngine;
 [AddComponentMenu("Scripts/Upgrades/Speed upgrade")]
 public class SpeedUpgrade : MonoBehaviour, IUpgrade {
     public GameObject player;
-    public int level = 1;
+    public int level = 0;
     public int maxLevel = 3;
+    public List<GameObject> upgradeLists;
 
     public void execute() {
         if (level + 1 > maxLevel) {
             return;
         }
 
+        upgradeLists[level].SetActive(false);
         level++;
-        player.GetComponentInChildren<Engine>().speedMultiplier = player.GetComponentInChildren<Engine>().defSpeed *  level * GlobalData.speedUpgradeFactor;
+        upgradeLists[level].SetActive(true);
     }
     
 	// Use this for initialization

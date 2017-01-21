@@ -27,10 +27,14 @@ public class Projectile : MonoBehaviour {
 
 	}
 
-    void OnCollisionEnter2D(Collision2D collision) {
+    void OnTriggerEnter2D(Collider2D collision) {
         Debug.Log("COLLISION");
         IObjectDamage dmg = collision.gameObject.GetComponent<IObjectDamage>();
-        dmg.takeDamage(this.gameObject, damage);
+        if (dmg == null) {
+            return;
+        };
+
+        dmg.takeDamage(gameObject, damage);
         Destroy(gameObject);
     }
 }

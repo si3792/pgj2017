@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerShip : MonoBehaviour, IObjectDamage {
+public class PlayerShip : MonoBehaviour, IObjectDamage, IDamageInflictor {
     public float maxHealth = 500;
     public float defMaxHealth = 500;
     public float health = 500;
@@ -19,8 +19,17 @@ public class PlayerShip : MonoBehaviour, IObjectDamage {
     }
 
     public void doDeath(GameObject inflictor) {
-
+        IDamageInflictor killer = inflictor.GetComponent<IDamageInflictor>();
+        killer.kill(gameObject);
         // END GAME
+    }
+
+    public void dealDamage(GameObject victim, float damage) {
+        // IDK
+    }
+
+    public void kill(GameObject victim) {
+        // IDK
     }
 
     void randomTurrets() {
