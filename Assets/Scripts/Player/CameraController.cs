@@ -14,10 +14,7 @@ public class CameraController : MonoBehaviour {
 	void Start () {
         mapCamera = GetComponent<Camera>();
         Camera.SetupCurrent(mainCamera);
-        tex.width = Screen.width / 10;
-        tex.height = Screen.height / 10;
         Image img = renderPanel.GetComponent<Image>();
-        mapCamera.targetTexture = (RenderTexture) img.mainTexture;
 	}
 	
 	// Update is called once per frame

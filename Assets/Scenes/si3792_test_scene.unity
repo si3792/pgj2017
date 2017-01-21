@@ -241,7 +241,7 @@ Prefab:
     - target: {fileID: 114004301326149438, guid: 1734d4acfba854f46be5ebbb14892009,
         type: 2}
       propertyPath: rotationSpeed
-      value: 0.05
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 212985234926147324, guid: 1734d4acfba854f46be5ebbb14892009,
         type: 2}
@@ -602,7 +602,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 15.78
+  orthographic size: 35
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

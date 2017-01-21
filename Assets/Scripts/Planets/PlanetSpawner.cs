@@ -49,13 +49,13 @@ class PlanetSpawner : MonoBehaviour{
 
             float size = UnityEngine.Random.Range(1.0f, 3.0f);
 
-            Gravity tempGravity = temp.GetComponent<Gravity>();
+            PlanetBase tempGravity = temp.GetComponent<PlanetBase>();
             tempGravity.size = size;
 
-            PlanetController tempController = temp.GetComponent<PlanetController>();
-            tempController.setSun(sun);
-            tempController.speed = UnityEngine.Random.Range(1.0f, 30.0f);
-            tempGravity.density = Mathf.Clamp(tempController.speed * 0.2f, 1.0f, 10.0f);
+            PlanetController_new tempController = temp.GetComponent<PlanetController_new>();
+            temp.transform.SetParent(sun.transform);
+            tempController.rotationSpeed = UnityEngine.Random.Range(0.01f, 1.2f);
+            tempGravity.density = Mathf.Clamp(tempController.rotationSpeed * 0.2f, 1.0f, 10.0f);
 
             UnityEngine.Random.InitState(DateTime.Now.Millisecond);
 
