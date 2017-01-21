@@ -12,14 +12,14 @@ public class SpeedUpgrade : MonoBehaviour, IUpgrade {
         if (level + 1 > maxLevel) {
             return;
         }
-        level++;
 
+        level++;
         player.GetComponentInChildren<Engine>().speedMultiplier = player.GetComponentInChildren<Engine>().defSpeed *  level * GlobalData.speedUpgradeFactor;
     }
     
 	// Use this for initialization
 	void Start () {
-		
+        execute();
 	}
 	
 	// Update is called once per frame
