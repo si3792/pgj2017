@@ -2,9 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[AddComponentMenu("Scripts/Upgrades/Damage upgrade")]
 public class DamageUpgrade : MonoBehaviour, IUpgrade {
-    public void execute() {
+    public GameObject player;
+    public int level = 1;
+    public int maxLevel = 3;
 
+    public void execute() {
+        if (level + 1 > maxLevel) {
+            return;
+        }
+
+        level++;
+        player.GetComponentInChildren<Turret>().damage = player.GetComponentInChildren<Turret>().defDamage * level * GlobalData.damageUpgradeFactor;
     }
 
 	// Use this for initialization

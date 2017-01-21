@@ -2,13 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[AddComponentMenu("Scripts/Upgrades/Health upgrade")]
 public class HealthUpgrade : MonoBehaviour, IUpgrade {
     public GameObject player;
     public int level = 1;
     public int maxLevel = 3;
 
     public void execute() {
-        player.GetComponent<PlayerShip>().maxHealth = player.GetComponent<PlayerShip>().defMaxHealth * level * GlobalData.HealthUpgradeFactor;
+        if (level + 1 > maxLevel) {
+            return;
+        }
+
+        level++;
+        player.GetComponent<PlayerShip>().maxHealth = player.GetComponent<PlayerShip>().defMaxHealth * level * GlobalData.healthUpgradeFactor;
     }
 
 	// Use this for initialization
