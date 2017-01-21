@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[AddComponentMenu("Scripts/Upgrades/Upgrade controller")]
 public class UpgradeController : MonoBehaviour {
 
 	// Use this for initialization
