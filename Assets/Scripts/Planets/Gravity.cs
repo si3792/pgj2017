@@ -17,8 +17,8 @@ public class Gravity : MonoBehaviour {
 
     public void computeSize() {
         //planetSize = this.gameObject.GetComponent<Transform> ().localScale.x;
-        transform.parent.localScale = new Vector2(size, size);
-        Debug.Log(transform.parent.GetComponent<SpriteRenderer>().bounds.size.x);
+        transform.localScale = new Vector2(size, size);
+        Debug.Log(transform.GetComponent<SpriteRenderer>().bounds.size.x);
         //transform.parent.GetComponent<CircleCollider2D>().radius = transform.parent.GetComponent<SpriteRenderer>().bounds.size.x * 0.5f;
     }
 

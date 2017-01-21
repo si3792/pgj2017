@@ -5,8 +5,6 @@ using UnityEngine;
 [AddComponentMenu("Scripts/Player/Movement script")]
 public class PlayerMovement : MonoBehaviour {
 	public Rigidbody2D rb;
-	public float rotationMultiplier = 0.1f;
-	public float speedMultiplier = 1.0f;
 
 	public void ApplyGravity(Vector3 pos, float size, float planetSize) {
 		float distance = Vector3.Distance(pos, transform.position);
@@ -16,6 +14,7 @@ public class PlayerMovement : MonoBehaviour {
 		}
         
 		// Increase gravity when nearby - doesn't work for whatever reason
+        // TODO: Cut off distance
 		if(distance < 10 * planetSize) distance *= 100;
 
         rb.AddForce((pos - transform.position).normalized * size / distance );
@@ -28,11 +27,7 @@ public class PlayerMovement : MonoBehaviour {
 
 	// Update is called once per frame
 	void FixedUpdate () {
-		rb.AddTorque(Input.GetAxis("Horizontal") * rotationMultiplier * -1);
-
-		// Controls 
-		rb.AddForce(Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z) * new Vector2(0, Input.GetAxis("Vertical") * speedMultiplier), ForceMode2D.Force);
-
+		
 		// TODO: Add gravity
 	}
 }

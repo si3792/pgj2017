@@ -28,7 +28,7 @@ class PlanetSpawner : MonoBehaviour{
 
         sun.transform.position = center;
         float size = UnityEngine.Random.Range(1.0f, 3.0f);
-        Gravity tempGravity = sun.GetComponentInChildren<Gravity>();
+        Gravity tempGravity = sun.GetComponent<Gravity>();
         tempGravity.size = size;
         tempGravity.density = 10.0f;
 
@@ -40,7 +40,7 @@ class PlanetSpawner : MonoBehaviour{
 
         GameObject sun = createSun(maxUnits, center);
 
-        float distanceToCenter = sun.GetComponentInChildren<SpriteRenderer>().bounds.size.x * 0.5f;
+        float distanceToCenter = sun.GetComponent<SpriteRenderer>().bounds.size.x * 0.5f;
 
         for (int i = 0; i<planets; i++) {
             UnityEngine.Random.InitState( DateTime.Now.Millisecond); // DO NOT REMOVE THIS LINE!!!
@@ -49,7 +49,7 @@ class PlanetSpawner : MonoBehaviour{
 
             float size = UnityEngine.Random.Range(1.0f, 3.0f);
 
-            Gravity tempGravity = temp.GetComponentInChildren<Gravity>();
+            Gravity tempGravity = temp.GetComponent<Gravity>();
             tempGravity.size = size;
 
             PlanetController tempController = temp.GetComponent<PlanetController>();
@@ -69,9 +69,6 @@ class PlanetSpawner : MonoBehaviour{
 
             Debug.Log(orbitRadius);
             Debug.Log(distanceToCenter);
-            /*temp.transform.position = new Vector3(  UnityEngine.Random.Range(center.x - maxUnits, center.x + maxUnits),
-                                                    UnityEngine.Random.Range(center.y - maxUnits, center.y + maxUnits),
-                                                    0   );*/
         }
 
     }
