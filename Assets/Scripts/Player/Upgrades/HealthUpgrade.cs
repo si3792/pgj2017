@@ -14,12 +14,12 @@ public class HealthUpgrade : MonoBehaviour, IUpgrade {
         }
 
         level++;
-        player.GetComponent<PlayerShip>().maxHealth = player.GetComponent<PlayerShip>().defMaxHealth * level * GlobalData.healthUpgradeFactor;
+        // REDO THIS SHIT
     }
 
 	// Use this for initialization
 	void Start () {
-		
+
 	}
 	
 	// Update is called once per frame
