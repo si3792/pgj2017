@@ -20,9 +20,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4652823389816610}
   - component: {fileID: 212985234926147324}
-  - component: {fileID: 50572278444948436}
   - component: {fileID: 114004301326149438}
   - component: {fileID: 114206482369223410}
+  - component: {fileID: 58151522989744726}
   m_Layer: 0
   m_Name: Planet_new
   m_TagString: Rotatable
@@ -37,32 +37,26 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1690783234812546}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.45, y: 18.24, z: 0}
+  m_LocalPosition: {x: -25.3, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50572278444948436
-Rigidbody2D:
-  serializedVersion: 4
+--- !u!58 &58151522989744726
+CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1690783234812546}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
+  m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 4.515
 --- !u!114 &114004301326149438
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -87,7 +81,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4325830a2839f4e0c93e784e1effaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: 0.5
+  size: 1
   density: 10
 --- !u!212 &212985234926147324
 SpriteRenderer:
