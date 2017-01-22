@@ -17,9 +17,9 @@ public class CreateSolarSystem : MonoBehaviour {
         center = transform.position;
         UnityEngine.Random.InitState(DateTime.Now.Millisecond);
 
-        for (int i = 0; i < planetsNumber; i++) {
-            generatePlanet(defaultDistance * i, 30f * i);
-        }
+        for (int i = 3; i < planetsNumber; i++) {
+            generateRing(5, defaultDistance * i, (UnityEngine.Random.value > 0.5f));
+       }
 
     }
 	
@@ -28,7 +28,17 @@ public class CreateSolarSystem : MonoBehaviour {
 		
 	}
 
-    void generatePlanet(float dist, float angle) {
+    void generateRing(float numOfPlanets, float dist, bool clockwise) {
+
+        float startAngle = UnityEngine.Random.Range(0f, 360f);
+        float tmpAng = 360 / numOfPlanets;
+        for (int i = 1; i <= numOfPlanets; i++) {
+            generatePlanet(dist, i * tmpAng + startAngle, clockwise);
+        }
+
+    }
+
+    void generatePlanet(float dist, float angle, bool clockwise) {
 
     
         GameObject temp = Instantiate(planetPrefab, transform.position, Quaternion.identity);
@@ -38,7 +48,7 @@ public class CreateSolarSystem : MonoBehaviour {
         temp.transform.position = new Vector3(temp.transform.position.x + dist * (float)Math.Cos(angle),
             temp.transform.position.y + dist * (float)(Math.Sin(angle)), 0);
         temp.transform.SetParent(transform);
-        
+        temp.GetComponent<PlanetController_new>().rotateClockwise = clockwise;
         
         /* float distanceToCenter = Vector3.Distance(temp.transform.position, center);
          temp.transform.SetParent(transform);

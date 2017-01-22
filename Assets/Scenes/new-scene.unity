@@ -110,8 +110,8 @@ MonoBehaviour:
   planetPrefab: {fileID: 1690783234812546, guid: 1734d4acfba854f46be5ebbb14892009,
     type: 2}
   center: {x: 0, y: 0, z: 0}
-  planetsNumber: 60
-  defaultDistance: 10
+  planetsNumber: 5
+  defaultDistance: 50
 --- !u!1001 &111932517
 Prefab:
   m_ObjectHideFlags: 0
@@ -1775,11 +1775,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4800832887015122, guid: a5caf673cb404fc4283ab9b34134d593, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 679
+      value: 380
       objectReference: {fileID: 0}
     - target: {fileID: 4800832887015122, guid: a5caf673cb404fc4283ab9b34134d593, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -513
+      value: -280
       objectReference: {fileID: 0}
     - target: {fileID: 4800832887015122, guid: a5caf673cb404fc4283ab9b34134d593, type: 2}
       propertyPath: m_LocalPosition.z
