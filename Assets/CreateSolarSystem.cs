@@ -34,13 +34,13 @@ public class CreateSolarSystem : MonoBehaviour {
         float startAngle = UnityEngine.Random.Range(0f, 360f);
         float tmpAng = 360 / numOfPlanets;
         for (int i = 1; i <= numOfPlanets; i++) {
-            generatePlanet(dist, i * tmpAng + startAngle, clockwise, rotSpeed, UnityEngine.Random.Range(1f, 2f));
+            generatePlanet(dist, i * tmpAng + startAngle, clockwise, rotSpeed, UnityEngine.Random.Range(1f, 2f), UnityEngine.Random.Range(0.1f, 2f));
         }
 
     }
 
 
-    void generatePlanet(float dist, float angle, bool clockwise, float rotSpeed, float size) {
+    void generatePlanet(float dist, float angle, bool clockwise, float rotSpeed, float size, float spin) {
 
     
         GameObject temp = Instantiate(planetPrefab, transform.position, Quaternion.identity);
@@ -51,6 +51,7 @@ public class CreateSolarSystem : MonoBehaviour {
         temp.transform.position.y + dist * (float)(Math.Sin(angle)), 0);
         temp.GetComponent<PlanetController_new>().rotateClockwise = clockwise;
         temp.GetComponent<PlanetController_new>().rotationSpeed = rotSpeed;
+        temp.GetComponent<Spin>().speed = spin;
         temp.transform.localScale = new Vector3(size, size, 1f);
 
         temp.transform.SetParent(transform);
