@@ -40,7 +40,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1310701690533516}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 380, y: -280, z: 0}
+  m_LocalPosition: {x: 148, y: -117, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -114,8 +114,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planetPrefab: {fileID: 1690783234812546, guid: 1734d4acfba854f46be5ebbb14892009,
     type: 2}
+  radioPlanetPrefab: {fileID: 1592298571244076, guid: 6cda1901c044d6b48a7401db7567790d,
+    type: 2}
   center: {x: 0, y: 0, z: 0}
-  planetsNumber: 10
+  planetsNumber: 5
   defaultDistance: 20
 --- !u!114 &114793504379489926
 MonoBehaviour:

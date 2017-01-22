@@ -8,6 +8,7 @@ using System.Text;
 public class CreateSolarSystem : MonoBehaviour {
 
     public GameObject planetPrefab;
+	public GameObject radioPlanetPrefab;
     public Vector3 center;
     public float planetsNumber = 1;
     public float defaultDistance = 1;
@@ -34,16 +35,19 @@ public class CreateSolarSystem : MonoBehaviour {
         float startAngle = UnityEngine.Random.Range(0f, 360f);
         float tmpAng = 360 / numOfPlanets;
         for (int i = 1; i <= numOfPlanets; i++) {
-            generatePlanet(dist, i * tmpAng + startAngle, clockwise, rotSpeed, UnityEngine.Random.Range(1f, 2f), UnityEngine.Random.Range(0.1f, 2f));
+            generatePlanet(dist, i * tmpAng + startAngle, clockwise, rotSpeed, UnityEngine.Random.Range(1f, 2f), UnityEngine.Random.Range(0.1f, 2f), true);
         }
 
     }
 
 
-    void generatePlanet(float dist, float angle, bool clockwise, float rotSpeed, float size, float spin) {
+	void generatePlanet(float dist, float angle, bool clockwise, float rotSpeed, float size, float spin, bool isRadio) {
 
-    
-        GameObject temp = Instantiate(planetPrefab, transform.position, Quaternion.identity);
+		GameObject temp;
+		if(isRadio)
+		 temp = Instantiate(radioPlanetPrefab, transform.position, Quaternion.identity);
+		else
+         temp = Instantiate(planetPrefab, transform.position, Quaternion.identity);
         // Vector3 dir = Quaternion.AngleAxis(angle, Vector3.up) * Vector3.forward * dist;
         //temp.transform.Translate( dir );
 
