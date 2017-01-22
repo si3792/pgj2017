@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HPBar : MonoBehaviour {
+[AddComponentMenu("Scripts/User interface/Exit button")]
+public class ExitButton : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -13,4 +14,8 @@ public class HPBar : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    public void doClick() {
+        Application.Quit();
+    }
 }

@@ -14,7 +14,6 @@ public class RadioWaveControl : MonoBehaviour {
 
     void Start () {
         upgrController = GameObject.Find("UpgradesController");
-        Debug.Log(upgrController);
 	}
 	
 	// Update is called once per frame
