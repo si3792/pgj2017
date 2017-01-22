@@ -17,6 +17,9 @@ public class PlayerShip : MonoBehaviour, IObjectDamage, IDamageInflictor {
         }
     }
 
+
+
+
     public void doDeath(GameObject inflictor) {
 
 		for(int i = 0;i < 4; i++)

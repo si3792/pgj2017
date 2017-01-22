@@ -34,7 +34,7 @@ public class RadioWaveControl : MonoBehaviour {
         // Updates here maybe?
 		int upgrType = (UnityEngine.Random.Range(0f, 1f) > 0.5)? 0 : 1;
         
-
+		GameObject.FindGameObjectWithTag ("Player").GetComponent<PlayerMovement> ().sparkle ();
 
         if (upgrType == 0) {
             bool check = upgrController.GetComponent<HealthUpgrade>().execute();
