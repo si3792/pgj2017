@@ -38,11 +38,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4939137961068456}
   - component: {fileID: 212212731517975086}
-  - component: {fileID: 61205323625677352}
   - component: {fileID: 114926746665351566}
+  - component: {fileID: 61422264891219958}
   m_Layer: 0
   m_Name: Hull_3
-  m_TagString: Untagged
+  m_TagString: Hull
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -156,11 +156,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4313747573274626}
   - component: {fileID: 212804373639389344}
-  - component: {fileID: 61376870907244788}
   - component: {fileID: 114300100694342366}
+  - component: {fileID: 61251233975468716}
   m_Layer: 0
   m_Name: hull_2
-  m_TagString: Untagged
+  m_TagString: Hull
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -426,11 +426,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4035005925463550}
   - component: {fileID: 212535285813977534}
-  - component: {fileID: 61391811660920478}
   - component: {fileID: 114018447315780032}
+  - component: {fileID: 61178562955926934}
   m_Layer: 0
   m_Name: hull_1
-  m_TagString: Untagged
+  m_TagString: Hull
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -804,12 +804,12 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &61205323625677352
+--- !u!61 &61178562955926934
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1145735032444790}
+  m_GameObject: {fileID: 1921912785661434}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -818,7 +818,7 @@ BoxCollider2D:
   m_Offset: {x: 0.012091637, y: -0.084641695}
   serializedVersion: 2
   m_Size: {x: 1.2176495, y: 2.9830284}
---- !u!61 &61376870907244788
+--- !u!61 &61251233975468716
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -832,12 +832,12 @@ BoxCollider2D:
   m_Offset: {x: 0.012091637, y: -0.084641695}
   serializedVersion: 2
   m_Size: {x: 1.2176495, y: 2.9830284}
---- !u!61 &61391811660920478
+--- !u!61 &61422264891219958
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1921912785661434}
+  m_GameObject: {fileID: 1145735032444790}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -1065,6 +1065,7 @@ MonoBehaviour:
   mustEqSize: 8
   waitFrames: 5
   curWait: 0
+  destroyOnEnd: 0
 --- !u!114 &114441378938909460
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1077,6 +1078,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   smokeFX: {fileID: 1360474117045208, guid: 76140f52859a09a4ab5ec795d82ebd79, type: 2}
+  sparksFX: {fileID: 1983051442127784, guid: 62fefed7551af40ef80052b2a6ee38bd, type: 2}
 --- !u!114 &114492528288703270
 MonoBehaviour:
   m_ObjectHideFlags: 1

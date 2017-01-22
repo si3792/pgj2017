@@ -14,8 +14,6 @@ public class HealthUpgrade : MonoBehaviour, IUpgrade {
             return;
         }
 
-        Debug.Log("UPGRADED HP " + level);
-
         upgradeLists[level].SetActive(false);
         level++;
         upgradeLists[level].SetActive(true);
