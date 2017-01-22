@@ -7,6 +7,8 @@ public class defeatControl : MonoBehaviour {
 	public Transform camera;
 	// Use this for initialization
 	void Start () {
+
+		camera = GameObject.FindGameObjectWithTag ("MainCamera").transform;
 		transform.parent = camera;
 	}
 

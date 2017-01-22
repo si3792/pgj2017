@@ -6,7 +6,7 @@ public class PlayerShip : MonoBehaviour, IObjectDamage, IDamageInflictor {
     public float maxHealth = 500;
     public float health = 500;
     public List<GameObject> turretGroups;
-	public GameObject smokeFX, sparkFx;
+	public GameObject smokeFX, sparkFx, defeat;
 
 
     public void takeDamage(GameObject inflictor, int damage) {
@@ -27,7 +27,9 @@ public class PlayerShip : MonoBehaviour, IObjectDamage, IDamageInflictor {
 			Instantiate (smokeFX, this.transform.position +  new Vector3(Random.Range(-0.2f, 0.2f), Random.Range(-0.2f, 0.2f), 0f), Quaternion.identity);
 
         IDamageInflictor killer = inflictor.GetComponent<IDamageInflictor>();
-        Destroy(transform.parent.gameObject);
+
+		Instantiate (defeat);
+        Destroy(transform.parent.gameObject, 0.1f);
 
 
         // killer.kill(gameObject);
