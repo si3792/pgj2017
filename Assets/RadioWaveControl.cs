@@ -8,6 +8,7 @@ public class RadioWaveControl : MonoBehaviour {
     Color red = (new Vector4(1f, 0f, 0f, 1f));
     Color neutral = (new Vector4(1f, 1f, 1f, 1f));
     GameObject upgrController;
+	public GameObject victory;
     
     public float charge = 100;
     
@@ -21,6 +22,10 @@ public class RadioWaveControl : MonoBehaviour {
 		
 
 		
+	}
+
+	void victoryy(){
+		Instantiate (victory);
 	}
 
 
@@ -37,6 +42,7 @@ public class RadioWaveControl : MonoBehaviour {
 			if(!upgrController.GetComponent<SpeedUpgrade>().execute() )
 			{
 				// Victory
+				victoryy();
 				Debug.Log("victory");
 			}
 				
@@ -48,6 +54,7 @@ public class RadioWaveControl : MonoBehaviour {
 				if(!upgrController.GetComponent<HealthUpgrade>().execute() )
 				{
 					// Victory
+					victoryy();
 					Debug.Log("victory");
 				}
 					
