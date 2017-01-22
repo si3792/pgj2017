@@ -35,7 +35,8 @@ public class CreateSolarSystem : MonoBehaviour {
         float startAngle = UnityEngine.Random.Range(0f, 360f);
         float tmpAng = 360 / numOfPlanets;
         for (int i = 1; i <= numOfPlanets; i++) {
-            generatePlanet(dist, i * tmpAng + startAngle, clockwise, rotSpeed, UnityEngine.Random.Range(1f, 2f), UnityEngine.Random.Range(0.1f, 2f), true);
+			generatePlanet(dist, i * tmpAng + startAngle, clockwise, rotSpeed, UnityEngine.Random.Range(1f, 2f), UnityEngine.Random.Range(0.1f, 2f), 
+				(UnityEngine.Random.Range(0f, 100f) < GlobalData.radioChancePercentage)? true : false);
         }
 
     }
