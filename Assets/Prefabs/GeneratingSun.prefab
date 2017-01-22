@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 58137407214289440}
   - component: {fileID: 114118241709822268}
   - component: {fileID: 114003125088216524}
+  - component: {fileID: 114540056563428664}
   m_Layer: 0
   m_Name: GeneratingSun
   m_TagString: Rotatable
@@ -39,7 +40,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1310701690533516}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -59.706287, y: 150.8526, z: 0}
+  m_LocalPosition: {x: 380, y: -280, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -100,6 +101,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   size: 1
   density: 10
+--- !u!114 &114540056563428664
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1310701690533516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63d68750d795ef548b7dac41cfb58834, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  planetPrefab: {fileID: 1690783234812546, guid: 1734d4acfba854f46be5ebbb14892009,
+    type: 2}
+  center: {x: 0, y: 0, z: 0}
+  planetsNumber: 10
+  defaultDistance: 20
 --- !u!114 &114793504379489926
 MonoBehaviour:
   m_ObjectHideFlags: 1
