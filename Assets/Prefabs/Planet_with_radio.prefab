@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 114256376832301692}
   - component: {fileID: 114768188785851592}
   - component: {fileID: 50299101077174226}
+  - component: {fileID: 114988075694482100}
   m_Layer: 0
   m_Name: Planet_with_radio
   m_TagString: Rotatable
@@ -291,6 +292,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 0.2
   rotateClockwise: 1
+  isSun: 0
 --- !u!114 &114256376832301692
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -334,6 +336,7 @@ MonoBehaviour:
   mustEqSize: 15
   waitFrames: 10
   curWait: 0
+  destroyOnEnd: 0
 --- !u!114 &114593774947698972
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -378,6 +381,7 @@ MonoBehaviour:
   mustEqSize: 15
   waitFrames: 10
   curWait: 0
+  destroyOnEnd: 0
 --- !u!114 &114632400963763310
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -412,6 +416,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 1b7e3230164f058488aa86dbcfa8a1d8, type: 3}
   - {fileID: 21300000, guid: 1ef824ef62b0afc40a7fb61eeb0730bc, type: 3}
   mustEqSize: 9
+  chosenSprite: 0
 --- !u!114 &114823833269052370
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -443,6 +448,21 @@ MonoBehaviour:
   mustEqSize: 15
   waitFrames: 10
   curWait: 0
+  destroyOnEnd: 0
+--- !u!114 &114988075694482100
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1592298571244076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3967c66bf21f64745ba10a9ba28d482e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  planetPrefab: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  spawnPercentage: 10
 --- !u!212 &212084268921500078
 SpriteRenderer:
   m_ObjectHideFlags: 1
