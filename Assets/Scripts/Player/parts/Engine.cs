@@ -29,10 +29,12 @@ public class Engine : MonoBehaviour, IObjectDamage {
         if (Input.GetAxis("Horizontal") != 0) {
             // TODO: Animation
         }
-        
+
         if (Input.GetAxis("Vertical") != 0) {
             // TODO: Animation
+            GlobalData.engineOn = true;
         }
+        else GlobalData.engineOn = false;
     }
 	
 	// Update is called once per frame

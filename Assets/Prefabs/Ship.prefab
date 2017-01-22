@@ -94,7 +94,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1323621191316984
 GameObject:
   m_ObjectHideFlags: 0
@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 61813214414390752}
   - component: {fileID: 114477131483586460}
   - component: {fileID: 114492528288703270}
+  - component: {fileID: 114441378938909460}
   m_Layer: 0
   m_Name: Ship
   m_TagString: Player
@@ -145,7 +146,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1445489546381808
 GameObject:
   m_ObjectHideFlags: 0
@@ -213,6 +214,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1555344205360668
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4584118209510632}
+  - component: {fileID: 212762960140798530}
+  m_Layer: 8
+  m_Name: MinimapTarget
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
 --- !u!1 &1582608296786338
 GameObject:
   m_ObjectHideFlags: 1
@@ -279,7 +296,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1698215875647882
 GameObject:
   m_ObjectHideFlags: 1
@@ -345,7 +362,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1869599871773618
 GameObject:
   m_ObjectHideFlags: 1
@@ -497,6 +514,7 @@ Transform:
   - {fileID: 4987486704994840}
   - {fileID: 4560691835437424}
   - {fileID: 4625496773492556}
+  - {fileID: 4584118209510632}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -588,11 +606,24 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1323621191316984}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.009, y: -1.252, z: 0}
+  m_LocalPosition: {x: -0.01, y: -1.31, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4376232595683642}
   m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4584118209510632
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1555344205360668}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 50, y: 50, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4376232595683642}
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4625496773492556
 Transform:
@@ -601,7 +632,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1888925996022646}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0044560432, y: -1.25, z: 0}
+  m_LocalPosition: {x: 0.0044560432, y: -1.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4376232595683642}
@@ -711,7 +742,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1455284388514426}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.009, y: -1.251, z: 0}
+  m_LocalPosition: {x: 0.009, y: -1.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4376232595683642}
@@ -730,7 +761,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0.8
-  m_AngularDrag: 0.6
+  m_AngularDrag: 10
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -779,7 +810,7 @@ MonoBehaviour:
   fireCooldown: 0.5
   damage: 10
   defDamage: 10
-  speed: 1
+  speed: 10
   direction: {x: 0, y: 0}
   timeOut: 10
   left: 1
@@ -811,7 +842,7 @@ MonoBehaviour:
   fireCooldown: 0.5
   damage: 10
   defDamage: 10
-  speed: 1
+  speed: 10
   direction: {x: 0, y: 0}
   timeOut: 10
   left: 0
@@ -832,7 +863,7 @@ MonoBehaviour:
   fireCooldown: 0.5
   damage: 10
   defDamage: 10
-  speed: 1
+  speed: 10
   direction: {x: 0, y: 0}
   timeOut: 10
   left: 0
@@ -853,7 +884,7 @@ MonoBehaviour:
   fireCooldown: 0.5
   damage: 10
   defDamage: 10
-  speed: 1
+  speed: 10
   direction: {x: 0, y: 0}
   timeOut: 10
   left: 0
@@ -874,7 +905,7 @@ MonoBehaviour:
   fireCooldown: 0.5
   damage: 10
   defDamage: 10
-  speed: 1
+  speed: 10
   direction: {x: 0, y: 0}
   timeOut: 10
   left: 1
@@ -891,10 +922,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 500
   health: 500
-  rotationMultiplier: 5
-  speedMultiplier: 8
+  rotationMultiplier: 30
+  speedMultiplier: 6
   defSpeed: 2
-  boostMultiplier: 5.5
+  boostMultiplier: 3.5
   active: 1
 --- !u!114 &114392373892564636
 MonoBehaviour:
@@ -913,10 +944,22 @@ MonoBehaviour:
   fireCooldown: 0.5
   damage: 10
   defDamage: 10
-  speed: 1
+  speed: 10
   direction: {x: 0, y: 0}
   timeOut: 10
   left: 1
+--- !u!114 &114441378938909460
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1332639473278162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e95d53e1164feb347b4d9cb809532b01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  smokeFX: {fileID: 1360474117045208, guid: 76140f52859a09a4ab5ec795d82ebd79, type: 2}
 --- !u!114 &114477131483586460
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -966,7 +1009,7 @@ MonoBehaviour:
   fireCooldown: 0.5
   damage: 10
   defDamage: 10
-  speed: 1
+  speed: 10
   direction: {x: 0, y: 0}
   timeOut: 10
   left: 1
@@ -983,10 +1026,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 500
   health: 500
-  rotationMultiplier: 0.1
-  speedMultiplier: 2
+  rotationMultiplier: 40
+  speedMultiplier: 8
   defSpeed: 2
-  boostMultiplier: 5.5
+  boostMultiplier: 3.5
   active: 1
 --- !u!114 &114631169432010318
 MonoBehaviour:
@@ -1005,7 +1048,7 @@ MonoBehaviour:
   fireCooldown: 0.5
   damage: 10
   defDamage: 10
-  speed: 1
+  speed: 10
   direction: {x: 0, y: 0}
   timeOut: 10
   left: 0
@@ -1026,7 +1069,7 @@ MonoBehaviour:
   fireCooldown: 0.5
   damage: 10
   defDamage: 10
-  speed: 1
+  speed: 10
   direction: {x: 0, y: 0}
   timeOut: 10
   left: 1
@@ -1047,7 +1090,7 @@ MonoBehaviour:
   fireCooldown: 0.5
   damage: 10
   defDamage: 10
-  speed: 1
+  speed: 10
   direction: {x: 0, y: 0}
   timeOut: 10
   left: 1
@@ -1068,7 +1111,7 @@ MonoBehaviour:
   fireCooldown: 0.5
   damage: 10
   defDamage: 10
-  speed: 1
+  speed: 10
   direction: {x: 0, y: 0}
   timeOut: 10
   left: 0
@@ -1100,7 +1143,7 @@ MonoBehaviour:
   fireCooldown: 0.5
   damage: 10
   defDamage: 10
-  speed: 1
+  speed: 10
   direction: {x: 0, y: 0}
   timeOut: 10
   left: 0
@@ -1117,10 +1160,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 500
   health: 500
-  rotationMultiplier: 2
-  speedMultiplier: 1.5
+  rotationMultiplier: 20
+  speedMultiplier: 4
   defSpeed: 2
-  boostMultiplier: 3
+  boostMultiplier: 20
   active: 1
 --- !u!212 &212023812628123930
 SpriteRenderer:
@@ -1540,6 +1583,41 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 4167933c2adba2c4fb17740cf3f1d34b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+--- !u!212 &212762960140798530
+SpriteRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1555344205360668}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 84ec209fa5bc43f4eb9ad143196936e9, type: 3}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
 --- !u!212 &212770134613143240
