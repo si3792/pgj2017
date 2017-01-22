@@ -6,7 +6,7 @@ using UnityEngine.UI;
 [AddComponentMenu("Scripts/User interface/Health bar")]
 public class HPBar : MonoBehaviour {
     public GameObject player;
-    private PlayerShip ship;
+    public PlayerShip ship;
     public Slider slider;
 
 	// Use this for initialization

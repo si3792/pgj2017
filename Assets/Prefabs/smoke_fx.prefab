@@ -87,6 +87,7 @@ MonoBehaviour:
   mustEqSize: 16
   waitFrames: 5
   curWait: 0
+  destroyOnEnd: 0
 --- !u!114 &114986054441702728
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -135,7 +136,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 84ec209fa5bc43f4eb9ad143196936e9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

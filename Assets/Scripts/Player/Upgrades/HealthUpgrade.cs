@@ -17,6 +17,8 @@ public class HealthUpgrade : MonoBehaviour, IUpgrade {
         upgradeLists[level].SetActive(false);
         level++;
         upgradeLists[level].SetActive(true);
+
+        GameObject.Find("HP Bar").GetComponent<HPBar>().ship = upgradeLists[level].GetComponent<PlayerShip>();
         // REDO THIS SHIT
     }
 
