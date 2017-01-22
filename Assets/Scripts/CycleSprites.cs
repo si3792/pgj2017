@@ -22,9 +22,10 @@ public class CycleSprites : MonoBehaviour {
 		else {
 			curSprite = 0;
 
+		
+		}
+		}
 		this.gameObject.GetComponent<SpriteRenderer> ().sprite = mSprites [curSprite];
-		}
-		}
 	}
 
 	void FixedUpdate() {
