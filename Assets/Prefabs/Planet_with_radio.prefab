@@ -460,7 +460,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3967c66bf21f64745ba10a9ba28d482e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planetPrefab: {fileID: 0}
+  planetPrefab: {fileID: 1690783234812546, guid: 1734d4acfba854f46be5ebbb14892009,
+    type: 2}
   center: {x: 0, y: 0, z: 0}
   spawnPercentage: 10
 --- !u!212 &212084268921500078
