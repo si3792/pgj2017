@@ -20,7 +20,8 @@ public class PlayerShip : MonoBehaviour, IObjectDamage, IDamageInflictor {
 
     public void doDeath(GameObject inflictor) {
         IDamageInflictor killer = inflictor.GetComponent<IDamageInflictor>();
-        killer.kill(gameObject);
+        Destroy(this.gameObject);
+        // killer.kill(gameObject);
         // END GAME
     }
 

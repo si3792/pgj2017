@@ -11,4 +11,5 @@ public class GlobalData : MonoBehaviour {
     public static float speedUpgradeFactor = 0.75f;
     public static float damageUpgradeFactor = 0.75f;
     public static float bounceFactor = 400f;
+    public static int dmgOnHit = 100;
 }
