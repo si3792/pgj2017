@@ -10,14 +10,21 @@ public class CycleSprites : MonoBehaviour {
 	public int mustEqSize;
 	public int waitFrames = 1;
 	public int curWait = 0;
-
+	public bool destroyOnEnd = false;
 
 	void nextSprite() {
 		curSprite++;
-		if (curSprite >= mustEqSize)
+		if (curSprite >= mustEqSize) {
+			if (destroyOnEnd) {
+				this.gameObject.GetComponent<SpriteRenderer> ().enabled = false;
+			Destroy (this.gameObject);
+			}
+		else {
 			curSprite = 0;
 
 		this.gameObject.GetComponent<SpriteRenderer> ().sprite = mSprites [curSprite];
+		}
+		}
 	}
 
 	void FixedUpdate() {

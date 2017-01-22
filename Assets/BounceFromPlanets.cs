@@ -5,6 +5,7 @@ using UnityEngine;
 public class BounceFromPlanets : MonoBehaviour {
 
     public GameObject smokeFX;
+	public GameObject sparksFX;
 	void Start () {
 		
 	}
@@ -24,6 +25,8 @@ public class BounceFromPlanets : MonoBehaviour {
                 Vector2 hitPoint = cp.point;
                 Instantiate(smokeFX, new Vector3(hitPoint.x, hitPoint.y, 0), Quaternion.identity);
                 Instantiate(smokeFX, new Vector3(hitPoint.x, hitPoint.y, 0), Quaternion.identity);
+				Instantiate(sparksFX, new Vector3(hitPoint.x, hitPoint.y, 0), Quaternion.identity);
+
             }
         }
     }
