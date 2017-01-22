@@ -8,11 +8,15 @@ public class PlanetBase : MonoBehaviour {
 	public float density = 1f;
 	private Transform playerTransform;
 	private PlayerMovement playerMovement;
+    bool inheritSize = true;
 
 	void Start () {
+
+
 		playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 		playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
 
+        if (inheritSize) size = transform.localScale.x;
 		transform.localScale = new Vector2(size, size);
 	}
 
