@@ -10,8 +10,9 @@ public class GlobalData : MonoBehaviour {
     public static float healthUpgradeFactor = 0.75f;
     public static float speedUpgradeFactor = 0.75f;
     public static float damageUpgradeFactor = 0.75f;
-    public static float bounceFactor = 400f;
+    public static float bounceFactor = 700f;
     public static int dmgOnHit = 100;
 
     public static bool engineOn = false;
+    public static bool shake = false;
 }

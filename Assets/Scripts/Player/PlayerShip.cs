@@ -12,7 +12,7 @@ public class PlayerShip : MonoBehaviour, IObjectDamage, IDamageInflictor {
 
     public void takeDamage(GameObject inflictor, int damage) {
         health = Mathf.Clamp(health - damage, 0, maxHealth);
-
+        GlobalData.shake = true;
         if (health == 0) {
             doDeath(inflictor);
         }

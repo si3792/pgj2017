@@ -18,8 +18,8 @@ public class PerlinShake : MonoBehaviour {
 	
 	// -------------------------------------------------------------------------
 	void Update() {
-		if (test) {
-			test = false;
+		if (GlobalData.shake) {
+			GlobalData.shake = false;
 			PlayShake();
 		}
 	}
@@ -30,7 +30,7 @@ public class PerlinShake : MonoBehaviour {
 		float elapsed = 0.0f;
 		
 		Vector3 originalCamPos = transform.position;
-		float randomStart = Random.Range(-1000.0f, 1000.0f);
+		float randomStart = Random.Range(-1, 1);
 		
 		while (elapsed < duration) {
 			
