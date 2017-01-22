@@ -19,7 +19,7 @@ public class defeatControl : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 		transform.position = new Vector3 (camera.position.x, camera.position.y, camera.position.z + 10); 
-		camera.transform.Translate (0f, 0f, -0.1f);
-		Invoke ("switchRoom", 2.5f);
+		camera.transform.Translate (0f, 0f, -0.7f);
+		Invoke ("switchRoom", 4f);
 	}
 }
