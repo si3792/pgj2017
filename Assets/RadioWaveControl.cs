@@ -40,7 +40,7 @@ public class RadioWaveControl : MonoBehaviour {
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
-        if(collision.gameObject.tag == "Player") {
+        if(collision.gameObject.tag == "Hull") {
             foreach (Transform child in transform) {
                 applyColor(child.gameObject.GetComponent<SpriteRenderer>(), green);
             }
@@ -48,7 +48,7 @@ public class RadioWaveControl : MonoBehaviour {
     }
 
     private void OnTriggerExit2D(Collider2D collision) {
-        if (collision.gameObject.tag == "Player") {
+        if (collision.gameObject.tag == "Hull") {
             foreach (Transform child in transform) {
                 applyColor(child.gameObject.GetComponent<SpriteRenderer>(), neutral);
             }
@@ -56,7 +56,7 @@ public class RadioWaveControl : MonoBehaviour {
     }
 
     private void OnTriggerStay2D(Collider2D collision) {
-        if (collision.gameObject.tag == "Player") {
+        if (collision.gameObject.tag == "Hull") {
             if (charge > 0) {
                 charge -= GlobalData.chargeDrainFactor;
                 GlobalData.shipCharge += GlobalData.chargeDrainFactor;
