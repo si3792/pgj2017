@@ -7,6 +7,7 @@ public class FollowTarget : MonoBehaviour {
 	public float interpVelocity;
 	public float minDistance;
 	public float followDistance;
+    public float speed = 0.25f;
 	public GameObject target;
 	public Vector3 offset;
 	Vector3 targetPos;
@@ -30,7 +31,7 @@ public class FollowTarget : MonoBehaviour {
 
 			targetPos = transform.position + (targetDirection.normalized * interpVelocity * Time.deltaTime);
 			targetPos = new Vector3(targetPos.x, targetPos.y, targetPos.z);
-			transform.position = Vector3.Lerp(targetPos + offset, targetPos + offset, 0.25f);
+			transform.position = Vector3.Lerp(targetPos + offset, targetPos + offset, speed);
 		}
 	}
 
