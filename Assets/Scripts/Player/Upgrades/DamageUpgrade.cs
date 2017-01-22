@@ -9,15 +9,16 @@ public class DamageUpgrade : MonoBehaviour, IUpgrade {
     public int maxLevel = 3;
     public List<GameObject> upgradeLists;
 
-    public void execute() {
+    public bool execute() {
         if (level + 1 > maxLevel) {
-            return;
+            return false;
         }
 
         upgradeLists[level].SetActive(false);
         level++;
         upgradeLists[level].SetActive(true);
-    }
+		return true;
+	}
 
 	// Use this for initialization
 	void Start () {

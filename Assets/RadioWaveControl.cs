@@ -19,12 +19,18 @@ public class RadioWaveControl : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
+
+		
 	}
 
-    private void finishTransmission() {
+
+
+    public void finishTransmission() {
         // Updates here maybe?
-        int upgrType = UnityEngine.Random.Range(0, 1);
+		int upgrType = (UnityEngine.Random.Range(0f, 1f) > 0.5)? 0 : 1;
         
+
+
         if (upgrType == 0) {
             upgrController.GetComponent<HealthUpgrade>().execute();
         }

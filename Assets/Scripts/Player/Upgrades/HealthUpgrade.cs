@@ -9,9 +9,9 @@ public class HealthUpgrade : MonoBehaviour, IUpgrade {
     public int maxLevel = 3;
     public List<GameObject> upgradeLists;
 
-    public void execute() {
-        if (level + 1 > maxLevel) {
-            return;
+    public bool execute() {
+        if (level + 1 >= maxLevel) {
+            return false;
         }
 
         upgradeLists[level].SetActive(false);
@@ -19,6 +19,8 @@ public class HealthUpgrade : MonoBehaviour, IUpgrade {
         upgradeLists[level].SetActive(true);
 
         GameObject.Find("HP Bar").GetComponent<HPBar>().ship = upgradeLists[level].GetComponent<PlayerShip>();
+
+		return true;
         // REDO THIS SHIT
     }
 

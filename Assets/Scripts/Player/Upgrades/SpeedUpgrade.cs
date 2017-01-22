@@ -9,9 +9,9 @@ public class SpeedUpgrade : MonoBehaviour, IUpgrade {
     public int maxLevel = 3;
     public List<GameObject> upgradeLists;
 
-    public void execute() {
-        if (level + 1 > maxLevel) {
-            return;
+    public bool execute() {
+        if (level + 1 >= maxLevel) {
+            return false;
         }
 
 
@@ -20,11 +20,12 @@ public class SpeedUpgrade : MonoBehaviour, IUpgrade {
         upgradeLists[level].SetActive(true);
 
         Debug.Log("UPGRADED Speed    " + level);
+		return true;
     }
     
 	// Use this for initialization
 	void Start () {
-        execute();
+       // execute();
 	}
 	
 	// Update is called once per frame
