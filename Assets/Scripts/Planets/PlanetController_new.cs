@@ -9,10 +9,17 @@ public class PlanetController_new : MonoBehaviour {
 	public bool rotateClockwise = true;
 	private GameObject sun; // The object we rotate around
 	private Rigidbody2D rb;
+    public bool isSun = false;
 
 	void Start () {
 		rb = this.gameObject.GetComponent<Rigidbody2D> ();
-		sun = this.gameObject.GetComponent<Transform> ().parent.gameObject;
+
+        if (this.gameObject.GetComponent<Transform>().parent == null) {
+            isSun = true;
+            return;
+        }
+
+        sun = this.gameObject.GetComponent<Transform> ().parent.gameObject;
 	}
 	
 	void rotateAroundSun() {

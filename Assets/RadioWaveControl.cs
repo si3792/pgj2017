@@ -7,12 +7,14 @@ public class RadioWaveControl : MonoBehaviour {
     Color green = (new Vector4(0f, 1f, 0f, 1f));
     Color red = (new Vector4(1f, 0f, 0f, 1f));
     Color neutral = (new Vector4(1f, 1f, 1f, 1f));
-
+    GameObject upgrController;
+    
     public float charge = 100;
     
 
     void Start () {
-		
+        upgrController = GameObject.Find("UpgradesController");
+        Debug.Log(upgrController);
 	}
 	
 	// Update is called once per frame
@@ -22,6 +24,16 @@ public class RadioWaveControl : MonoBehaviour {
 
     private void finishTransmission() {
         // Updates here maybe?
+        int upgrType = UnityEngine.Random.Range(0, 1);
+        
+        if (upgrType == 0) {
+            upgrController.GetComponent<HealthUpgrade>().execute();
+        }
+
+        if (upgrType == 1) {
+            upgrController.GetComponent<SpeedUpgrade>().execute();
+        }
+
         GlobalData.shipCharge = 0;
         GlobalData.transmissionsSpied++;
         Destroy(this.gameObject);
