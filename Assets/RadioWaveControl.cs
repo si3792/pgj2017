@@ -22,7 +22,7 @@ public class RadioWaveControl : MonoBehaviour {
 
     private void finishTransmission() {
         // Updates here maybe?
-
+        GlobalData.shipCharge = 0;
         GlobalData.transmissionsSpied++;
         Destroy(this.gameObject);
     }
