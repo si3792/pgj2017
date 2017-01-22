@@ -18,7 +18,7 @@ public class BounceFromPlanets : MonoBehaviour {
         if (col.gameObject.tag == "Rotatable") {
             Vector3 dir = -(col.gameObject.transform.position - this.gameObject.transform.position).normalized;
             this.GetComponent<Rigidbody2D>().AddForce(dir * GlobalData.bounceFactor);
-            this.GetComponent<PlayerShip>().takeDamage(col.gameObject, GlobalData.dmgOnHit);
+            this.GetComponentInChildren<PlayerShip>().takeDamage(col.gameObject, GlobalData.dmgOnHit);
 
             foreach (ContactPoint2D cp in col.contacts) {
                 Vector2 hitPoint = cp.point;

@@ -16,7 +16,6 @@ public class Turret : MonoBehaviour, IObjectDamage {
     public bool active = true;
     public float fireCooldown = 0.5f;
     public float damage = 10.0f;
-    public float defDamage = 10.0f;
     public float speed = 1.0f;
     public Vector2 direction = Vector2.zero;
     public float timeOut = 10.0f;

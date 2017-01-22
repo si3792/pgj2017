@@ -22,7 +22,11 @@ public class PlanetBase : MonoBehaviour {
 
 	void Update () {
 
-		float distance = Vector3.Distance(playerTransform.position, transform.position);
+        if (playerTransform == null) {
+            return;
+        }
+
+        float distance = Vector3.Distance(playerTransform.position, transform.position);
 		if(distance < GlobalData.gravityCutoffDistance) {
 			playerMovement.ApplyGravity(transform.position, size * density);
 		}

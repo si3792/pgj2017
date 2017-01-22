@@ -14,9 +14,12 @@ public class SpeedUpgrade : MonoBehaviour, IUpgrade {
             return;
         }
 
+
         upgradeLists[level].SetActive(false);
         level++;
         upgradeLists[level].SetActive(true);
+
+        Debug.Log("UPGRADED Speed    " + level);
     }
     
 	// Use this for initialization

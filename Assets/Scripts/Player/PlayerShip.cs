@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class PlayerShip : MonoBehaviour, IObjectDamage, IDamageInflictor {
     public float maxHealth = 500;
-    public float defMaxHealth = 500;
     public float health = 500;
-    public float defHealth = 500;
     public List<GameObject> turretGroups;
 
 
@@ -20,7 +18,7 @@ public class PlayerShip : MonoBehaviour, IObjectDamage, IDamageInflictor {
 
     public void doDeath(GameObject inflictor) {
         IDamageInflictor killer = inflictor.GetComponent<IDamageInflictor>();
-        Destroy(this.gameObject);
+        Destroy(transform.parent.gameObject);
         // killer.kill(gameObject);
         // END GAME
     }

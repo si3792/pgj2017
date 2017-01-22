@@ -8,7 +8,6 @@ public class Engine : MonoBehaviour, IObjectDamage {
     public float health = 500;
     public float rotationMultiplier = 0.1f;
     public float speedMultiplier = 2.0f;
-    public float defSpeed = 2.0f;
     public float boostMultiplier = 5.5f;
     private Rigidbody2D rb;
     //public float boostCooldown = 3.0f;
