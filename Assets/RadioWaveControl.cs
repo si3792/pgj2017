@@ -32,11 +32,25 @@ public class RadioWaveControl : MonoBehaviour {
 
 
         if (upgrType == 0) {
-            upgrController.GetComponent<HealthUpgrade>().execute();
+            bool check = upgrController.GetComponent<HealthUpgrade>().execute();
+			if(!check)
+			if(!upgrController.GetComponent<SpeedUpgrade>().execute() )
+			{
+				// Victory
+				Debug.Log("victory");
+			}
+				
         }
-
+		else 
         if (upgrType == 1) {
-            upgrController.GetComponent<SpeedUpgrade>().execute();
+			bool check = upgrController.GetComponent<SpeedUpgrade>().execute();
+				if(!check)
+				if(!upgrController.GetComponent<HealthUpgrade>().execute() )
+				{
+					// Victory
+					Debug.Log("victory");
+				}
+					
         }
 
         GlobalData.shipCharge = 0;
