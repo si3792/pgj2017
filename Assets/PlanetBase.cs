@@ -12,7 +12,6 @@ public class PlanetBase : MonoBehaviour {
 
 	void Start () {
 
-
 		playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 		playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
 
