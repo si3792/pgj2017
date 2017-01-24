@@ -12,7 +12,7 @@ public class GlobalData : MonoBehaviour {
     public static float damageUpgradeFactor = 0.75f;
     public static float bounceFactor = 900f;
     public static int dmgOnHit = 100;
-    public static float chargeDrainFactor = 0.5f;
+    public static float chargeDrainFactor = 0.25f;
 	public static float radioChancePercentage = 16;
 
     public static int transmissionsSpied = 0;
