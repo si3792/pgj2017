@@ -20,7 +20,7 @@ public class CreateSolarSystem : MonoBehaviour {
 
         for (int i = 3; i < planetsNumber; i++) {
             float rotSpeed = UnityEngine.Random.Range(0.1f, 0.3f);
-			generateRing( (int)(UnityEngine.Random.Range(1, 6)), defaultDistance * i, (UnityEngine.Random.value > 0.5f), rotSpeed);
+			generateRing( (int)(UnityEngine.Random.Range(1, 8)), defaultDistance * i, (UnityEngine.Random.value > 0.5f), rotSpeed);
        }
 
     }
