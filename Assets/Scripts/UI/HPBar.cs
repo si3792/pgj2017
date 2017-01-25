@@ -8,6 +8,7 @@ public class HPBar : MonoBehaviour {
     public GameObject player;
     public PlayerShip ship;
     public Slider slider;
+	public bool radarBarInstead = false;
 
 	// Use this for initialization
 	void Start () {
@@ -19,6 +20,7 @@ public class HPBar : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        slider.value = ship.health / ship.maxHealth;
+		if(radarBarInstead)slider.value = GlobalData.shipCharge / 100f;   
+        else slider.value = ship.health / ship.maxHealth;
 	}
 }

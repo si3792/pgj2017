@@ -16,6 +16,9 @@ public class RadioPlanetCorrection : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		GetComponent<Spin> ().speed = Random.Range (0.1f, 0.8f);
-		GetComponent<PlanetController_new> ().rotationSpeed = Random.Range (0.02f, 0.06f);
+		if( GetComponent<Spin> ().speed < 0.25f ) {
+			GetComponent<PlanetBase> ().density = Random.Range (50f, 100f) * GetComponent<PlanetBase>().size;
+		}
+		GetComponent<PlanetController_new> ().rotationSpeed = Random.Range (0.02f, 0.15f);
 	}
 }
