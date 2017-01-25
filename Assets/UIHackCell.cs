@@ -9,7 +9,7 @@ public class UIHackCell : MonoBehaviour {
 	public int required = 1;
 
 	void Start () {
-				
+		gameObject.GetComponent<Image> ().enabled = false;
 	}
 	
 	// Update is called once per frame

@@ -17,6 +17,8 @@ public class PlayButton : MonoBehaviour {
 	}
 
     public void doCLick() {
-        SceneManager.LoadScene(1);
-    }
+        
+		GlobalData.transmissionsSpied = 0;
+		SceneManager.LoadScene(1);
+	}
 }

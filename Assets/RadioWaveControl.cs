@@ -7,14 +7,13 @@ public class RadioWaveControl : MonoBehaviour {
     Color green = (new Vector4(0f, 1f, 0f, 1f));
     Color red = (new Vector4(1f, 0f, 0f, 1f));
     Color neutral = (new Vector4(1f, 1f, 1f, 1f));
-    GameObject upgrController;
-	public GameObject victory;
+
     
     public float charge = 100;
     
 
     void Start () {
-        upgrController = GameObject.Find("UpgradesController");
+        
 	}
 	
 	// Update is called once per frame
@@ -24,44 +23,12 @@ public class RadioWaveControl : MonoBehaviour {
 		
 	}
 
-	void victoryy(){
-		Instantiate (victory);
-	}
+
 
 
 
     public void finishTransmission() {
-        // Updates here maybe?
-		int upgrType = (UnityEngine.Random.Range(0f, 1f) > 0.5)? 0 : 1;
-        
-		GameObject.FindGameObjectWithTag ("Player").GetComponent<PlayerMovement> ().sparkle ();
 
-        if (upgrType == 0) {
-            bool check = upgrController.GetComponent<HealthUpgrade>().execute();
-			if(!check)
-			if(!upgrController.GetComponent<SpeedUpgrade>().execute() )
-			{
-				// Victory
-				victoryy();
-				Debug.Log("victory");
-			}
-				
-        }
-		else 
-        if (upgrType == 1) {
-			bool check = upgrController.GetComponent<SpeedUpgrade>().execute();
-				if(!check)
-				if(!upgrController.GetComponent<HealthUpgrade>().execute() )
-				{
-					// Victory
-					victoryy();
-					Debug.Log("victory");
-				}
-					
-        }
-
-        GlobalData.shipCharge = 0;
-        GlobalData.transmissionsSpied++;
         Destroy(this.gameObject);
     }
 
