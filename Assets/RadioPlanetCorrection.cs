@@ -17,7 +17,7 @@ public class RadioPlanetCorrection : MonoBehaviour {
 	void Update () {
 		GetComponent<Spin> ().speed = Random.Range (0.1f, 0.8f);
 		if( GetComponent<Spin> ().speed < 0.25f ) {
-			GetComponent<PlanetBase> ().density = Random.Range (50f, 100f) * GetComponent<PlanetBase>().size;
+			GetComponent<PlanetBase> ().density = Random.Range (65f, 110f) * GetComponent<PlanetBase>().size;
 		}
 		GetComponent<PlanetController_new> ().rotationSpeed = Random.Range (0.02f, 0.15f);
 	}
